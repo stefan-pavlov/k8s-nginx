@@ -34,3 +34,12 @@ jobs:
       run: |
         kubectl rollout restart deployment/nginx-deployment
         kubectl rollout status deployment/nginx-deployment
+
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@v2
+      with:
+        projectBaseDir: .
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_PROJECT_KEY: minikube-sq
+        SONAR_ORGANIZATION: stefan-pavlov
