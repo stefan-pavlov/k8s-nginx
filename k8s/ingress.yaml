@@ -5,12 +5,8 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  tls:
-  - hosts:
-    - 48.220.48.97.nip.io
-    secretName: tls-secret
   rules:
-  - host: your.domain.com
+  - host: 4.211.207.253.nip.io
     http:
       paths:
       - path: /
